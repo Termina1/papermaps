@@ -1,4 +1,6 @@
 source 'https://rubygems.org'
+gem 'capistrano'
+gem 'rvm-capistrano'
 
 gem 'rails',     github: 'rails/rails'
 gem 'arel',      github: 'rails/arel'
@@ -10,7 +12,7 @@ gem 'oj'
 
 gem 'riak-client'
 gem 'instagram'
-
+gem 'puma', git: 'git://github.com/puma/puma.git'
 group :assets do
   gem 'sprockets-rails', github: 'rails/sprockets-rails'
   gem 'sass-rails',   github: 'rails/sass-rails'
