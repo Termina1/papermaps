@@ -3,7 +3,7 @@ class PhotosController < ApplicationController
     respond_to do |wants|
 
       wants.json do
-        render json: Photo.populate_from_instagram("cats", 10)
+        render json: Photo.get_last
       end
 
       wants.html do

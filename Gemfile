@@ -19,6 +19,7 @@ group :assets do
   gem "twitter-bootstrap-rails"
   gem "batman-rails"
   gem 'slim_assets'
+  gem 'skim', git: 'git@github.com:jfirebaugh/skim.git'
 end
 
 gem 'jquery-rails'

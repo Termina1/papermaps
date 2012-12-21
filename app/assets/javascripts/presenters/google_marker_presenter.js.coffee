@@ -2,4 +2,6 @@ class Papermaps.GoogleMarkerPresenter
   constructor: (@model) ->
 
   toMarker: ->
-    console.log 11
+    html = JST['views/maps/marker']()
+    console.log @model
+    #marker = google.maps.InfoWindow content: html, position: new google.maps.
