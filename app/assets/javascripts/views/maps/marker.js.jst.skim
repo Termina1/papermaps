@@ -1,4 +1,2 @@
-.popover.top
-  .arrow
-  .popover.content
-    p llaalallal
+img src=@thumb() alt=""
+p= @get 'description'

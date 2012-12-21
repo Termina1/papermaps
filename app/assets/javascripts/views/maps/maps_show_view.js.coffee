@@ -5,6 +5,7 @@ class Papermaps.MapsShowView extends Batman.View
       zoom: 8
       center: new google.maps.LatLng 59.863216, 31.040608
       mapTypeId: google.maps.MapTypeId.ROADMAP
+      disableDefaultUI: true
 
     map = new google.maps.Map($('.map-container')[0], mapOptions);
 
@@ -12,5 +13,5 @@ class Papermaps.MapsShowView extends Batman.View
 
   applyMarkers: (map) ->
     Papermaps.Photo.get('all').forEach (el) ->
-      (new Papermaps.GoogleMarkerPresenter el).toMarker()
+      (new Papermaps.GoogleMarkerPresenter el).toMarker(map)
 
