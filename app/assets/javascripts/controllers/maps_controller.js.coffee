@@ -3,4 +3,5 @@ class Papermaps.MapsController extends Batman.Controller
   routingKey: 'maps'
 
   show: ->
-    @set 'maps', {}
+    Papermaps.Photo.load =>
+      console.log 111
