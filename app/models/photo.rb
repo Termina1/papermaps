@@ -40,7 +40,7 @@ class Photo
   end
 
   def images
-    Struct.new(:standard_resolution_image_url, :low_resolution_image_url, :thumbnail_image_url).new(
+    Struct.new(:standard_resolution, :low_resolution, :thumbnail).new(
       standard_resolution_image_url, low_resolution_image_url, thumbnail_image_url
     )
   end
