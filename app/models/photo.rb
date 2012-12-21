@@ -34,7 +34,8 @@ class Photo
       ) if media_block.location.present?
     end
 
-    photos.compact.each &:save
+    photos.compact!
+    photos.each &:save
     save_last_saved_photo_id photos.first.id if photos.first
   end
 
