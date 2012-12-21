@@ -29,9 +29,9 @@ class Photo
         standard_resolution_image_url: media_block.images.standard_resolution.url,
         thumbnail_image_url: media_block.images.thumbnail.url,
         low_resolution_image_url: media_block.images.low_resolution.url,
-        longitude: media_block.location.try(:longitude),
-        latitude: media_block.location.try(:latitude),
-      )
+        longitude: media_block.location.longitude,
+        latitude: media_block.location.latitude,
+      ) if media_block.location
     end
 
     photos.each &:save
