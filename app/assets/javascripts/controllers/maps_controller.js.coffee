@@ -1,0 +1,1 @@
+class Papermaps.MapsController extends Batman.Controller

@@ -4,6 +4,9 @@ gem 'rails',     github: 'rails/rails'
 gem 'arel',      github: 'rails/arel'
 gem 'activerecord-deprecated_finders', github: 'rails/activerecord-deprecated_finders'
 
+gem 'resque'
+gem 'resque-scheduler', :require => 'resque_scheduler'
+
 gem 'riak-client'
 gem 'instagram'
 
@@ -12,6 +15,9 @@ group :assets do
   gem 'sass-rails',   github: 'rails/sass-rails'
   gem 'coffee-rails', github: 'rails/coffee-rails'
   gem 'uglifier', '>= 1.0.3'
+  gem 'compass-rails'
+  gem "twitter-bootstrap-rails"
+  gem "batman-rails"
 end
 
 gem 'jquery-rails'
