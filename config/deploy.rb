@@ -70,3 +70,11 @@ namespace :puma do
   end
   after "deploy:restart", "puma:restart"
 end
+
+namespace :deploy do
+  namespace :assets do
+    task :precompile, roles: :web, except: { no_release: true } do
+      run %Q{cd #{latest_release} && #{rake} RAILS_ENV=#{rails_env} #{asset_env} assets:precompile:primary}
+    end
+  end
+end
