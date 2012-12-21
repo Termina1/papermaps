@@ -31,11 +31,11 @@ class Photo
         low_resolution_image_url: media_block.images.low_resolution.url,
         longitude: media_block.location.longitude,
         latitude: media_block.location.latitude,
-      ) if media_block.location
+      ) if media_block.location.present?
     end
 
-    photos.each &:save
-    save_last_saved_photo_id photos.first.id
+    photos.compact.each &:save
+    save_last_saved_photo_id photos.first.id if photos.first
   end
 
   def images
