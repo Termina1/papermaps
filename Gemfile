@@ -14,6 +14,7 @@ group :assets do
   gem 'uglifier', '>= 1.0.3'
   gem 'compass-rails'
   gem "twitter-bootstrap-rails"
+  gem "batman-rails"
 end
 
 gem 'jquery-rails'
