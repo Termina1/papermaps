@@ -6,6 +6,7 @@ gem 'activerecord-deprecated_finders', github: 'rails/activerecord-deprecated_fi
 
 gem 'resque'
 gem 'resque-scheduler', :require => 'resque_scheduler'
+gem 'oj'
 
 gem 'riak-client'
 gem 'instagram'

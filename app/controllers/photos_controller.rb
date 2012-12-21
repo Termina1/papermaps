@@ -3,7 +3,7 @@ class PhotosController < ApplicationController
     respond_to do |wants|
 
       wants.json do
-        render json: Photo.get_last
+        render json: Photo.get_last.each{|p| PhotoPresenter.to_map_json(p)}
       end
 
       wants.html do
