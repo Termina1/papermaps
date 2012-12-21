@@ -12,25 +12,20 @@ module RiakStorage
   end
 
   module ClassMethods
+    def get(key)
+      bucket.get_or_new key
+    end
+
     private
 
     def get_ordered_by_date(count)
-      map = <<-END
-      function(v) {
-        return [JSON.parse(v.values[0].data)];
-      };
-      END
+      map = " function(v) { return [v]; } "
 
-      reduce = <<-END
-        function (v, args) {
-          v.sort( function(a,b) { return b['lastModifiedParsed'] - a['lastModifiedParsed'] });
-          return v;
-        };
-      END
+      reduce = 'function (v) { v.sort( function(a,b) { return b["metadata"]["X-Riak-Last-Modified"] - a["metadata"]["X-Riak-Last-Modified"] }); return v; }'
 
       Riak::MapReduce.new(client).
                   add(BUCKET_NAME).
-                  map(map).run
+                  map(map, keep: true).reduce(reduce).run
     end
   end
 
