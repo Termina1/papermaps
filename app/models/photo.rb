@@ -1,8 +1,8 @@
 class Photo
   include RiakStorage
 
-  attr_accessor :id, :username, :description, :time,
-                :standard_resolution_image_url, :thumbnail_image_url,
+  attr_accessor :id, :username, :description, :time
+  attr_writer   :standard_resolution_image_url, :thumbnail_image_url,
                 :low_resolution_image_url, :longitude, :latitude
 
   def initialize(opts={})
@@ -20,7 +20,7 @@ class Photo
 
     response = loader.get_media
 
-    response.data.map do |media_block|
+    photos = response.data.map do |media_block|
       new(
         id: media_block.id,
         username: media_block.user.username,
@@ -33,19 +33,18 @@ class Photo
         latitude: media_block.location.try(:latitude),
       )
     end
-  end
 
-  def self.get_last_saved_photo_id
-    get('last_photo_id').try(:id)
+    photos.each &:save
+    save_last_saved_photo_id photos.first.id
   end
 
   def images
     Struct.new(:standard_resolution, :low_resolution, :thumbnail).new(
-      standard_resolution_image_url, low_resolution_image_url, thumbnail_image_url
+      @standard_resolution_image_url, @low_resolution_image_url, @thumbnail_image_url
     )
   end
 
   def location
-    Struct.new(:longitude, :latitude).new longtitude, latitude
+    Struct.new(:longitude, :latitude).new @longtitude, @latitude
   end
 end
