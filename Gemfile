@@ -4,10 +4,9 @@ gem 'rails',     github: 'rails/rails'
 gem 'arel',      github: 'rails/arel'
 gem 'activerecord-deprecated_finders', github: 'rails/activerecord-deprecated_finders'
 
+gem 'riak-client'
 gem 'instagram'
 
-# Gems used only for assets and not required
-# in production environments by default.
 group :assets do
   gem 'sprockets-rails', github: 'rails/sprockets-rails'
   gem 'sass-rails',   github: 'rails/sass-rails'
@@ -16,12 +15,9 @@ group :assets do
 end
 
 gem 'jquery-rails'
+gem 'slim'
+gem 'turbolinks'
 
 group :development do
   gem 'thin'
 end
-
-gem 'slim'
-
-# Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks
-gem 'turbolinks'
