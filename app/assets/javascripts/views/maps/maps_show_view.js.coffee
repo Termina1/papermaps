@@ -12,5 +12,5 @@ class Papermaps.MapsShowView extends Batman.View
 
   applyMarkers: (map) ->
     Papermaps.Photo.get('all').forEach (el) ->
-      console.log el
+      (new Papermaps.GoogleMarkerPresenter el).toMarker()
 
