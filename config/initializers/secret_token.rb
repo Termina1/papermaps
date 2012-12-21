@@ -2,6 +2,11 @@
 
 # Your secret key for verifying the integrity of signed cookies.
 # If you change this key, all old signed cookies will become invalid!
+
 # Make sure the secret is at least 30 characters and all random,
 # no regular words or you'll be exposed to dictionary attacks.
-Papermaps::Application.config.secret_token = '878c00cf612296640cae3f155396c0cdba31214f28b91041930042a01b959bb1d0b4f7b8ddbdb415320c1b6b23b8de6c883fd730432e074345be1ec1e03701ac'
+# You can use `rake secret` to generate a secure secret key.
+
+# Make sure your secret_key_base is kept private
+# if you're sharing your code publicly.
+Papermaps::Application.config.secret_key_base = 'aab64bca30dbd4ecd5d4b98fdfa73feeaeda53bf6c3ce0df838b1349e6f83c3b73c98bfd82d1d06b3b606579fbcaaa352ba087d233c09eef786991c33f884012'
