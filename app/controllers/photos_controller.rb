@@ -3,7 +3,7 @@ class PhotosController < ApplicationController
     respond_to do |wants|
 
       wants.json do
-        render json: Photo.populate_from_instagram("cats", 10)
+        render json: Photo.populate_from_instagram("cats", 10).each{|p| PhotoPresenter.to_map_json(p)}
       end
 
       wants.html do
