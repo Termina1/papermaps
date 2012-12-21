@@ -4,6 +4,9 @@ gem 'rails',     github: 'rails/rails'
 gem 'arel',      github: 'rails/arel'
 gem 'activerecord-deprecated_finders', github: 'rails/activerecord-deprecated_finders'
 
+gem 'resque'
+gem 'resque-scheduler', :require => 'resque_scheduler'
+
 gem 'riak-client'
 gem 'instagram'
 
