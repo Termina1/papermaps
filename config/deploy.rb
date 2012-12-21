@@ -34,7 +34,6 @@ namespace :deploy do
   after "deploy:setup", "deploy:setup_config"
 
   task :symlink_config, roles: :app do
-    run "ln -nfs #{shared_path}/config/database.yml #{release_path}/config/database.yml"
     run "ln -nfs #{shared_path}/config/puma.rb #{release_path}/config/puma.rb"
   end
   after "deploy:finalize_update", "deploy:symlink_config"
@@ -53,21 +52,21 @@ end
 namespace :puma do
   desc "Start Puma"
   task :start, :except => { :no_release => true } do
-    commands = ["#{sudo} start puma"]
+    commands = ["#{sudo} start puma_papermaps"]
     run commands.join(" ")
   end
   after "deploy:start", "puma:start"
 
   desc "Stop Puma"
   task :stop, :except => { :no_release => true } do
-    run "#{sudo} stop puma"
+    run "#{sudo} stop puma_papermaps"
   end
   after "deploy:stop", "puma:stop"
 
   desc "Restart Puma"
   task :restart, roles: :app do
-    run "#{sudo} stop puma"
-    run "#{sudo} start puma"
+    run "#{sudo} stop puma_papermaps"
+    run "#{sudo} start puma_papermaps"
   end
   after "deploy:restart", "puma:restart"
 end
