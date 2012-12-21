@@ -21,7 +21,6 @@ group :assets do
   gem 'compass-rails'
   gem "twitter-bootstrap-rails"
   gem "batman-rails"
-  gem 'slim_assets'
   gem 'skim', git: 'git@github.com:jfirebaugh/skim.git'
 end
 
