@@ -1,9 +1,9 @@
 class InstaWorker
   @queue = :normal
 
-  def self.perform(maps, hashtag, perform_in = 10.minutes)
-    # code for update photos
-    Resque.enqueue_in(perform_in, self, maps, hashtag, perform_in)
+  def self.perform(hashtag, count = 50, perform_in = 10.minutes)
+    Photo.populate_from_instagram hashtag, count
+    Resque.enqueue_in(perform_in, self, hashtag, count, perform_in)
   end
-  
+
 end
