@@ -123,6 +123,10 @@ GEM
       net-sftp (>= 2.0.0)
       net-ssh (>= 2.0.14)
       net-ssh-gateway (>= 1.1.0)
+    capistrano-resque (0.0.9)
+      capistrano
+      resque
+      resque-scheduler
     coderay (1.0.8)
     coffee-script (2.2.0)
       coffee-script-source
@@ -249,6 +253,7 @@ DEPENDENCIES
   arel!
   batman-rails
   capistrano
+  capistrano-resque
   coffee-rails!
   haml_assets
   instagram

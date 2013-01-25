@@ -1,6 +1,7 @@
 source "https://rubygems.org"
 gem "capistrano"
 gem "rvm-capistrano"
+gem "capistrano-resque"
 
 gem "rails",     github: "rails/rails"
 gem "arel",      github: "rails/arel"
