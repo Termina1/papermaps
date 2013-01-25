@@ -19,6 +19,6 @@ class Photo
   end
 
   def location
-    Struct.new(:longitude, :latitude).new longtitude, latitude
+    Struct.new(:longitude, :latitude).new longitude, latitude
   end
 end
