@@ -4,6 +4,9 @@ set :rvm_ruby_string, '1.9.3@swissamhell'
 require "rvm/capistrano"
 require "capistrano-resque"
 
+role :resque_worker, "62.76.191.134"
+role :resque_scheduler, "62.76.191.134"
+
 set :workers, { "normal" => 1 }
 
 server "62.76.191.134", :web, :app, :db, primary: true
