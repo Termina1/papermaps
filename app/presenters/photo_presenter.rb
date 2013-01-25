@@ -1,18 +1,15 @@
 class PhotoPresenter
   def self.to_map_json photo
     {
-      date:     photo.time,
-      caption:  photo.description,
+      #time:     photo.time,
+      description:  photo.description,
       username: photo.username,
-      location: {
-        longitude: photo.location.longitude,
-        latitude:  photo.location.latitude
-      },
-      images: {
-        small:  photo.images.thumbnail,
-        medium: photo.images.low_resolution,
-        large:  photo.images.standard_resolution
-      }
+      longitude: photo.location.longitude,
+      latitude:  photo.location.latitude,
+      id: photo.id,
+      thumbnail_image_url:  photo.images.thumbnail,
+      low_resolution_image_url: photo.images.low_resolution,
+      standard_resolution_image_url:  photo.images.standard_resolution
     }
   end
 end

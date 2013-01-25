@@ -3,8 +3,7 @@ class Papermaps.Photo extends Batman.Model
   @persist Batman.RailsStorage
 
   @encode 'username'
-  @encode 'urls'
-  @encode 'gps'
+  #@encode 'urls'
   @encode 'description'
   @encode 'time'
   @encode 'low_resolution_image_url'
