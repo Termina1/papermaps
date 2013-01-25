@@ -1,6 +1,7 @@
 //= require jquery
 //= require jquery_ujs
 //= require turbolinks
+//= require info_bubble
 
 // Batman.js and its adapters
 //= require batman/es5-shim
@@ -14,6 +15,7 @@
 //= require_tree ./controllers
 //= require_tree ./helpers
 //= require_tree ./views
+
 
 
 
